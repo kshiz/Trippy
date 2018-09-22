@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body></body>
+
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Trippy</a>
+
+    </div>
+</nav>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="sf.jpg"></div>
+</div>
+<div class="section white">
+    <div class="row container">
+        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this
+            case, is moved at a different speed than the foreground content while scrolling.</p>
+        <h2 class="header">Parallax</h2>
+    </div>
+</div>
+
+<!-- Dropdown Trigger -->
+
+<div id="bottom">
+    <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Choose Destination</a>
+
+</div>
+<!-- Make Search -->
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content'>
+    <li><a>San Francisco</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a>Boston</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a>New York</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a>London</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a>Tokyo</a></li>
+    <li class="divider" tabindex="-1"></li>
+</ul>
+
+<div id="map">
+
+</div>
+</body>
+
+<script src="materialize.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0pgxanTNtVwR7IkMRbW77a0ZMfaHMLUg&v=3.33&callback=initMap"></script>
+
+</html>
