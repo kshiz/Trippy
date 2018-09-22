@@ -1,4 +1,105 @@
-#login-wrap
+body {
+  background-color: #A21414;
+}
+#login-container
 {
-  background-color: aliceblue;
+  position: absolute;
+  top: 32%;
+  left: 34%;
+
+  width: 30%;
+  height: 40%;
+
+  /* background-color: aquamarine; */
+}
+
+.login-header {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  
+  width: 100%;
+  height: 40px;
+
+  /* background-color: aqua; */
+}
+
+.login-tab
+{
+  position: relative;
+  display: inline-block;
+  height: 100%;
+
+  background-color: white;
+
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;       /* the same as your div height */
+
+  font-family: 'Roboto', sans-serif;
+  color: #ee6e73;
+
+  cursor: pointer;
+  transition: 0.1s;
+
+}
+.login-tab:hover
+{
+  background-color: #F9ECEC;
+  color: #F58689;
+}
+
+.login-content
+{
+  background-color: rgba(234, 240, 243, 0.7);
+}
+
+#login-btn
+{
+  position: relative;
+  top: 40%;
+  left: 20%;
+  width: 60%;
+  height: 40px;
+
+  font-size: 1.2vw;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  padding: 1px;
+  background-color: #05826B;
+
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;       /* the same as your div height */
+
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+#login-btn:hover
+{
+  background-color: #289F89;
+}
+
+.selectedTab {
+  border-bottom: 2px solid #ee6e73;
+}
+.login-content input {
+  outline: none;
+}
+#input-language
+{
+  position: relative;
+  top: 60px;
+
+  display: block;
+  background-color: #eee;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin: auto;
+  font-size: 20px;
+
+  outline: none;
+  border-radius: 3px; 
 }
