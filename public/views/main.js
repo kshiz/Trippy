@@ -12,7 +12,13 @@ hotels = [];
 restaurants = [];
 
 var cities = ["San Francisco", "Tokyo", "London", "Boston", "New York"];
-var K = 0;
+var letterstring="abcdefghijklmnopqrstuvwxyz";
+
+function getLetterIndex()
+{
+    return Math.floor(Math.random()*26);
+}
+
 for (i = 0; i < 100; i++) {
   sourceindex = K % 5;
   destinationindex = (K+1)%5;
@@ -24,12 +30,14 @@ for (i = 0; i < 100; i++) {
   flights.push({
     source: cities[sourceindex],
     destination: cities[destinationindex],
-    price: Math.random() * 1000
+    price: Math.random() * 1000,
+    id: generateRandomString("ABCDEFGHIJKLMNOPQRSTUVXYZ123456790", 5)
   });
 
   trains.push({
     source: cities[sourceindex],
     destination: cities[destinationindex],
+    name: generateRandomString(letterstring, 3),
     price: Math.random() * 500
   });
 
@@ -49,6 +57,8 @@ for (i = 0; i < 100; i++) {
     price: null
   });
 }
+
+console.log(flights);
 
 for (i = 0; i < restaurants.length; i++) {
   let restaurant = restaurants[i];
@@ -99,6 +109,17 @@ flights.sort(comparator);
 cars.sort(comparator);
 restaurants.sort(comparator);
 
+function generateRandomString(letterString,no)
+{
+ var str="";
+ for(var i=0; i<no; i++)
+ {
+     str+=letterString[Math.floor(Math.random()*(letterString.length-1))];
+     //console.log('hhh');
+ }
+
+ return str;
+}
 
 //console.log(restaurants);
 $(() => {
