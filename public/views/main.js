@@ -118,3 +118,19 @@ $(() => {
 // ()=>{
 
 // }
+
+function insertTrain(train) {
+  var data = train.name + ' | ' + train.price;
+  $("#train-list").append('<li>' + data + '</li>');
+}
+
+function insertCab(cab) {
+  var data = cab.price;
+  $("#cab-list").append('<li>' + data + '</li>');
+}
+function insertFlight(flught) {
+  var data = flight.id + ' | ' + flight.price;
+  $("#cab-list").append('<li>' + data + '</li>');
+}
+
+
