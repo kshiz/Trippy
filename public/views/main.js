@@ -85,6 +85,16 @@ for (i = 0; i < restaurants.length; i++) {
   }
 }
 
+function comparator(a, b){
+    return a.price<b.price
+}
+hotels.sort(comparator);
+trains.sort(comparator);
+flights.sort(comparator);
+cars.sort(comparator);
+restaurants.sort(comparator);
+
+
 console.log(restaurants);
 $(() => {
   $(".parallax").parallax();
@@ -105,7 +115,32 @@ $(() => {
 
   $("#submit").click(function() {
     budget = $("#budget").value();
+    $("#budget_display").text(budget);
+    for (i=0; i<trains.length; i++)
+    {
+        if(trains[i].source==source&&trains[i].destination==destination&&trains.price<=budget)
+        {
+                
+        }
+
+        if(flights[i].source==source&&flights[i].destination==destination&&flights.price<=budget)
+        {
+
+        }
+
+        if(cars[i].source==source&&cars[i].destination==destination&&cars[i].price<=budget)
+        {
+
+        }
+
+
+        
+        
+    }    
+
+    
   });
+
 
   //initMap();
 });
