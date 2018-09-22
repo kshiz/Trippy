@@ -2,17 +2,56 @@
   <head>
     <title>Login - Trippy</title>
 
+     <!-- jQuery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <script src="../script/firebase.js"></script>
 
+    <!-- SCRIPTS -->
+    <script src="../script/login.js"></script>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../stylesheets/login.css">
+
+    
+
   </head>
   <body>
-    <div class="login-container">
+    <!-- <div class="login-container">
       <div class="login-header">
         <div id="tab-login"></div>
         <div id="tab-signup"></div>
       </div>
       <div class="login-content"></div>
-    </div>
+    </div> -->
+
+
+      <div class="row" id="login-wrap">
+        <div class="col s4">
+          <ul class="tabs">
+            <li class="tab col s3"><a class="active" href="#login">LOGIN</a></li>
+            <li class="tab col s3"><a href="#register">REGISTER</a></li>
+          </ul>
+        </div>
+
+        <div id="login" class="col s12">
+            <a class="waves-effect waves-light btn-large" id="loginButton">Sign in with Google</a>
+        </div>
+
+        <div id="register" class="col s12">
+          REGISTER
+        </div>
+
+      </div>
+
+
   </body>
 </html>
