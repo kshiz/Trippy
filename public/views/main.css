@@ -10,7 +10,7 @@
     justify-content: center
 }
 
-#budgetContainer {
+#budget {
     position: relative;
     top: -25px;
     left: -10px;
@@ -19,4 +19,12 @@
 #transport{
     display: flex;
     justify-content: space-evenly;
+}
+
+.transport-container {
+    /* background-color: aqua; */
+}
+
+.accomodation-container {
+    /* background-color: brown; */
 }

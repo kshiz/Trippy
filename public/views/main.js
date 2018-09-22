@@ -11,11 +11,16 @@ cars = [];
 hotels = [];
 restaurants = [];
 
-var cities = ["San Francisco", "Tokyo", "London", "Boston"];
-
+var cities = ["San Francisco", "Tokyo", "London", "Boston", "New York"];
+var K = 0;
 for (i = 0; i < 100; i++) {
-  sourceindex = Math.floor(Math.random() * 3);
-  destinationindex = Math.floor(Math.random() * 3);
+  sourceindex = K % 5;
+  destinationindex = (K+1)%5;
+  // sourceindex = Math.floor(Math.random() * 4);
+  // destinationindex = Math.floor(Math.random() * 4);
+
+  K++;
+
   flights.push({
     source: cities[sourceindex],
     destination: cities[destinationindex],
@@ -67,7 +72,7 @@ for (i = 0; i < restaurants.length; i++) {
 
     //console.log("h");
     hotel.price = hotel.stars * Math.random() * 800;
-    console.log(hotel.stars);
+    //console.log(hotel.stars);
   }
   while (train.price == 0 || train.price == null) {
    // console.log("t");
@@ -95,7 +100,7 @@ cars.sort(comparator);
 restaurants.sort(comparator);
 
 
-console.log(restaurants);
+//console.log(restaurants);
 $(() => {
   $(".parallax").parallax();
   $(".dropdown-trigger").dropdown();
@@ -114,27 +119,34 @@ $(() => {
   });
 
   $("#submit").click(function() {
-    budget = $("#budget").value();
+    budget = $("#budget #textarea1").val();
+    $("#train-list").html('');
+    $("#cab-list").html('');
+    $("#flight-list").html('');
+    $("#hotel-list").html('');
+    $("#restaurant-list").html('');
+
+
+
+    //console.log(budget);
     $("#budget_display").text(budget);
     for (i=0; i<trains.length; i++)
-    {
-        if(trains[i].source==source&&trains[i].destination==destination&&trains.price<=budget)
+    {  
+        if(trains[i].source==source&&trains[i].destination==destination&&trains[i].price<=budget)
         {
-                
+          insertTrain(trains[i]);
         }
-
-        if(flights[i].source==source&&flights[i].destination==destination&&flights.price<=budget)
+        if(flights[i].source==source&&flights[i].destination==destination&&flights[i].price<=budget)
         {
-
+          insertFlight(flights[i]);
         }
-
-        if(cars[i].source==source&&cars[i].destination==destination&&cars[i].price<=budget)
-        {
-
-        }
-
 
         
+        if(cars[i].source==source&&cars[i].destination==destination&&cars[i].price<=budget)
+        {
+            insertCab(cars[i]);
+        }
+
         
     }    
 
@@ -155,17 +167,17 @@ $(() => {
 // }
 
 function insertTrain(train) {
-  var data = train.name + ' | ' + train.price;
+  var data = train.name + ' | ' + (train.price).toPrecision(3);
   $("#train-list").append('<li>' + data + '</li>');
 }
 
 function insertCab(cab) {
-  var data = cab.price;
+  var data = (cab.price).toPrecision(3);
   $("#cab-list").append('<li>' + data + '</li>');
 }
-function insertFlight(flught) {
-  var data = flight.id + ' | ' + flight.price;
-  $("#cab-list").append('<li>' + data + '</li>');
+function insertFlight(flight) {
+  var data = flight.id + ' | ' + (flight.price).toPrecision(3);
+  $("#flight-list").append('<li>' + data + '</li>');
 }
 
 
