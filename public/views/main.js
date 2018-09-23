@@ -180,9 +180,21 @@ $(() => {
 
 
   //initMap();
-
-  // $("#train-list li").on('click', function() {
-  //   $(this).css('')
+  $('body').on('click', '.transportclass li', function() {
+    $('.transportclass li').css({
+      'background-color': 'transparent',
+      'color': 'white '
+    });
+    $(this).css({
+      'background-color': 'lightgrey',
+      'color': 'black'
+    });
+});
+  // $("#train-list ul li").on('click', function() {
+  //   console.log('test');
+  //   $(this).css({
+  //     'background-color': 'red'
+  //   });
   // });
 });
 
@@ -201,7 +213,7 @@ function insertTrain(train) {
 }
 
 function insertCab(cab) {
-  var data = cab.id + ' | ' +  (cab.price).toPrecision(3);
+  var data = (cab.price).toPrecision(3);
   $("#cab-list").append('<li>' + data + '</li>');
 }
 function insertFlight(flight) {
