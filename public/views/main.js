@@ -195,7 +195,7 @@ function insertTrain(train) {
 }
 
 function insertCab(cab) {
-  var data = (cab.price).toPrecision(3);
+  var data = cab.id + ' | ' +  (cab.price).toPrecision(3);
   $("#cab-list").append('<li>' + data + '</li>');
 }
 function insertFlight(flight) {
