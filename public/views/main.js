@@ -13,6 +13,7 @@ restaurants = [];
 
 var cities = ["San Francisco", "Tokyo", "London", "Boston", "New York"];
 var letterstring="abcdefghijklmnopqrstuvwxyz";
+var K=0;
 
 function getLetterIndex()
 {
@@ -20,12 +21,14 @@ function getLetterIndex()
 }
 
 for (i = 0; i < 100; i++) {
-  sourceindex = K % 5;
-  destinationindex = (K+1)%5;
+  sourceindex = K%4;
+  destinationindex =(K+1)%4;
+
+  K++;
   // sourceindex = Math.floor(Math.random() * 4);
   // destinationindex = Math.floor(Math.random() * 4);
 
-  K++;
+  
 
   flights.push({
     source: cities[sourceindex],
