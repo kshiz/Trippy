@@ -33,3 +33,7 @@
 .accomodation-container {
     /* background-color: brown; */
 }
+
+#remainingBudget {
+  cursor: default; 
+}

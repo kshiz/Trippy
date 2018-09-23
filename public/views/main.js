@@ -180,6 +180,10 @@ $(() => {
 
 
   //initMap();
+
+  // $("#train-list li").on('click', function() {
+  //   $(this).css('')
+  // });
 });
 
 // function()
@@ -204,5 +208,6 @@ function insertFlight(flight) {
   var data = flight.id + ' | ' + (flight.price).toPrecision(3);
   $("#flight-list").append('<li>' + data + '</li>');
 }
+
 
 
