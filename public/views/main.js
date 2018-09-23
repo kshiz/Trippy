@@ -18,7 +18,7 @@ function getLetterIndex()
 {
     return Math.floor(Math.random()*26);
 }
-
+var K = 0;
 for (i = 0; i < 100; i++) {
   sourceindex = K % 5;
   destinationindex = (K+1)%5;
@@ -133,10 +133,12 @@ $(() => {
 
   $("#dropdown1>li").click(function() {
     destination = $(this).text();
+    $('#destinationDrop').html(destination);
   });
 
   $("#dropdown2>li").click(function() {
     source = $(this).text();
+    $('#sourceDrop').html(source);
   });
 
   $("#submit").click(function() {

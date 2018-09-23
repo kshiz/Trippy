@@ -20,6 +20,10 @@ function signInWithGoogle() {
     // The signed-in user info.
     var user = result.user;
     console.log(user);
+
+    if(user) {
+      window.location = 'homepage.html'; //After successful login, user will be redirected to home.html
+    }
     // ...
   }).catch(function(error) {
     // Handle Errors here.
