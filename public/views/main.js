@@ -209,16 +209,29 @@ $(() => {
 
 function insertTrain(train) {
   var data = train.name + ' | ' + (train.price).toPrecision(3);
-  $("#train-list").append('<li>' + data + '</li>');
+
+  
+  $("#train-list").append($("<li>").html(data).click(function(){
+
+    budget-=train.price;
+
+}))
 }
 
 function insertCab(cab) {
   var data = (cab.price).toPrecision(3);
-  $("#cab-list").append('<li>' + data + '</li>');
+
+  $("#cab-list").append(($("<li>").html(data).click(function(){
+    budget-=cab.price;
+})));
+ 
+  
 }
 function insertFlight(flight) {
   var data = flight.id + ' | ' + (flight.price).toPrecision(3);
-  $("#flight-list").append('<li>' + data + '</li>');
+  $("#flight-list").append(($("<li>").html(data).click(function(){
+    budget-=flight.price;
+})));
 }
 
 
