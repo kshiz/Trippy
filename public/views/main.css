@@ -10,21 +10,16 @@
     justify-content: center
 }
 
-#budget {
-    position: relative;
-    top: -25px;
-    left: -10px;
-}
 
-#transport{
-    display: flex;
-    justify-content: space-evenly;
-}
+
+
 
 #map
 {
     height: 400px
 }
+
+
 
 .transport-container {
     /* background-color: aqua; */
@@ -38,7 +33,7 @@
   cursor: default; 
 }
 
-.row
+#budgetContainer
 {
     display: flex;
     flex-direction: row;
