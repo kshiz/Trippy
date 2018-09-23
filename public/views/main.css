@@ -21,6 +21,11 @@
     justify-content: space-evenly;
 }
 
+#map
+{
+    height: 400px
+}
+
 .transport-container {
     /* background-color: aqua; */
 }

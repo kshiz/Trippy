@@ -12,7 +12,8 @@ hotels = [];
 restaurants = [];
 
 var cities = ["San Francisco", "Tokyo", "London", "Boston", "New York"];
-var letterstring="abcdefghijklmnopqrstuvwxyz";
+var letterstring="ABCDEFGHIJKLMNOPQRSTUVXYZ";
+var K=0;
 
 function getLetterIndex()
 {
@@ -20,12 +21,13 @@ function getLetterIndex()
 }
 var K = 0;
 for (i = 0; i < 100; i++) {
-  sourceindex = K % 5;
-  destinationindex = (K+1)%5;
+  sourceindex = K%4;
+  destinationindex =(K+1)%4;
+  K++;
   // sourceindex = Math.floor(Math.random() * 4);
   // destinationindex = Math.floor(Math.random() * 4);
 
-  K++;
+  
 
   flights.push({
     source: cities[sourceindex],
@@ -44,7 +46,7 @@ for (i = 0; i < 100; i++) {
   cars.push({
     source: cities[sourceindex],
     destination: cities[destinationindex],
-    price: Math.random() * 700
+    price: Math.random() * 200
   });
 
   hotels.push({
