@@ -180,6 +180,10 @@ $(() => {
 
 
   //initMap();
+
+  // $("#train-list li").on('click', function() {
+  //   $(this).css('')
+  // });
 });
 
 // function()
@@ -203,10 +207,12 @@ function insertTrain(train) {
 }
 
 function insertCab(cab) {
-  var data = (cab.price).toPrecision(3);
+    var data = cab.id + ' | ' +  (cab.price).toPrecision(3);
   $("#cab-list").append(($("<li>").html(data).click(function(){
     budget-=cab.price;
 })));
+ 
+  
 }
 function insertFlight(flight) {
   var data = flight.id + ' | ' + (flight.price).toPrecision(3);
@@ -214,5 +220,6 @@ function insertFlight(flight) {
     budget-=flight.price;
 })));
 }
+
 
 
