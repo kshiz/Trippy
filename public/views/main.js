@@ -131,7 +131,7 @@ $(() => {
   var map;
   var destination;
   var source;
-  var budget;
+  var budgetPrice;
 
   $("#dropdown1>li").click(function() {
     destination = $(this).text();
@@ -144,25 +144,25 @@ $(() => {
   });
 
   $("#submit").click(function() {
-    budget = $("#budget #textarea1").val();
+    budgetPrice = $("#budget #textarea1").val();
     
     $("#train-list").html('');
     $("#cab-list").html('');
     $("#flight-list").html('');
     $("#hotel-list").html('');
     $("#restaurant-list").html('');
-    displayBudget(budget);
+    displayBudget(budgetPrice);
 
 
     //console.log(budget);
-    $("#budget_display").text(budget);
+    $("#budget_display").text(budgetPrice);
     for (i=0; i<trains.length; i++)
     {  
-        if(trains[i].source==source&&trains[i].destination==destination&&trains[i].price<=budget)
+        if(trains[i].source==source&&trains[i].destination==destination&&trains[i].price<=budgetPrice)
         {
           insertTrain(trains[i]);
         }
-        if(flights[i].source==source&&flights[i].destination==destination&&flights[i].price<=budget)
+        if(flights[i].source==source&&flights[i].destination==destination&&flights[i].price<=budgetPrice)
         {
           insertFlight(flights[i]);
         }
@@ -197,18 +197,8 @@ $(() => {
   //     'background-color': 'red'
   //   });
   // });
-});
 
-// function()
-// {
-
-// }
-
-// ()=>{
-
-// }
-
-function displayBudget(value){
+  function displayBudget(value){
 
     $("#remainingBudget").text(value);
 }
@@ -219,8 +209,9 @@ function insertTrain(train) {
   
   $("#train-list").append($("<li>").html(data).click(function(){
 
-    budget-=train.price;
-    displayBudget(budget);
+    console.log(budgetPrice);
+    budgetPrice-=train.price;
+    displayBudget(budgetPrice);
 
 }))
 }
@@ -229,8 +220,8 @@ function insertCab(cab) {
   var data = (cab.price).toPrecision(3);
 
   $("#cab-list").append(($("<li>").html(data).click(function(){
-    budget-=cab.price;
-    displayBudget(budget);
+    budgetPrice-=cab.price;
+    displayBudget(budgetPrice);
     
 })));
  
@@ -239,10 +230,23 @@ function insertCab(cab) {
 function insertFlight(flight) {
   var data = flight.id + ' | ' + (flight.price).toPrecision(3);
   $("#flight-list").append(($("<li>").html(data).click(function(){
-    budget-=flight.price;
-    displayBudget(budget);
+    budgetPrice-=flight.price;
+    displayBudget(budgetPrice);
 })));
 }
 
+
+
+
+});
+
+// function()
+// {
+
+// }
+
+// ()=>{
+
+// }
 
 
