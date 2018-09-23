@@ -145,12 +145,13 @@ $(() => {
 
   $("#submit").click(function() {
     budget = $("#budget #textarea1").val();
+    
     $("#train-list").html('');
     $("#cab-list").html('');
     $("#flight-list").html('');
     $("#hotel-list").html('');
     $("#restaurant-list").html('');
-
+    displayBudget(budget);
 
 
     //console.log(budget);
@@ -195,6 +196,11 @@ $(() => {
 
 // }
 
+function displayBudget(value){
+
+    $("#remainingBudget").text(value);
+}
+
 function insertTrain(train) {
   var data = train.name + ' | ' + (train.price).toPrecision(3);
 
@@ -202,6 +208,7 @@ function insertTrain(train) {
   $("#train-list").append($("<li>").html(data).click(function(){
 
     budget-=train.price;
+    displayBudget(budget);
 
 }))
 }
@@ -210,6 +217,8 @@ function insertCab(cab) {
     var data = cab.id + ' | ' +  (cab.price).toPrecision(3);
   $("#cab-list").append(($("<li>").html(data).click(function(){
     budget-=cab.price;
+    displayBudget(budget);
+    
 })));
  
   
@@ -218,6 +227,7 @@ function insertFlight(flight) {
   var data = flight.id + ' | ' + (flight.price).toPrecision(3);
   $("#flight-list").append(($("<li>").html(data).click(function(){
     budget-=flight.price;
+    displayBudget(budget);
 })));
 }
 
