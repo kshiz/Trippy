@@ -2,6 +2,11 @@
 {
     width:100%;
 }
+.img {
+    background-image: url("image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 #bottom
 {
