@@ -132,6 +132,7 @@ $(() => {
   var destination;
   var source;
   var budgetPrice;
+  
 
   $("#dropdown1>li").click(function() {
     destination = $(this).text();
@@ -145,6 +146,7 @@ $(() => {
 
   $("#submit").click(function() {
     budgetPrice = $("#budget #textarea1").val();
+   
     
     $("#train-list").html('');
     $("#cab-list").html('');
@@ -168,11 +170,14 @@ $(() => {
         }
 
         
-        if(cars[i].source==source&&cars[i].destination==destination&&cars[i].price<=budget)
+        //console.log(cars[i].source+" "+cars[i].destination+" "+cars[i].price)
+        if(cars[i].source==source&&cars[i].destination==destination&&cars[i].price<=budgetPrice)
         {
-            insertCab(cars[i]);
+           
+           insertCab(cars[i]);
         }
-
+     
+       
         
     }    
 
